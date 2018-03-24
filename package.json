@@ -1,4 +1,6 @@
 {
+  "name": "imdb-to-tmdb-discussions-gfunc",
+  "version": "0.1.0",
   "dependencies": {
     "axios": "^0.18.0"
   }
