@@ -1,16 +1,18 @@
 # iMDB to tMDB Discussions Google Function
 
-This backend Google Function will automatically redirect the user to the tMDB movie that matches iMDB title link.
+This backend Google Function will automatically redirect the user to the tMDB movie that matches iMDB title link in parameter.
 
 ## Deploy
 
 ```
 yarn install
-gcloud beta functions deploy imdb-discussions --source=gfunc
+cp ../secrets.json ./ # OR populate your secrets file with tMDB API key
+gcloud beta functions deploy imdb-discussions --source=./
 ```
 
 ## Invoke
 
+Example:
 ```
 curl "https://us-central1-imdb-discussions.cloudfunctions.net/imdb-discussions?href=http://www.imdb.com/title/tt2407380/"
 ```
