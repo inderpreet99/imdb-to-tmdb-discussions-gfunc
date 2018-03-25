@@ -7,7 +7,7 @@ This backend Google Function will automatically redirect the user to the tMDB mo
 ```
 yarn install
 cp ../secrets.json ./ # OR populate your secrets file with tMDB API key
-gcloud beta functions deploy imdb-discussions --source=./
+gcloud beta functions deploy imdb-discussions --entry-point=request --source=./
 ```
 
 ## Invoke
@@ -20,7 +20,7 @@ curl "https://us-central1-imdb-discussions.cloudfunctions.net/imdb-discussions?h
 ### Logs
 
 ```
-gcloud beta functions deploy imdb-discussions --entry-point=request --source=imdb-to-tmdb-discussions-gfunc
+gcloud beta functions logs read imdb-discussions
 ```
 
 
