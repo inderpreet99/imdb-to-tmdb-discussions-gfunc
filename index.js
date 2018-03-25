@@ -26,8 +26,7 @@ const getIMDBId = (url) => {
 }
 
 const sendResp = (res, iMDBId) => {
-
-    axios.get('https://api.themoviedb.org/3/find/' + iMDBId + '?TMDB_api_key=' + secrets.tmdbApiKey + '&external_source=imdb_id').then((output) => {
+    axios.get('https://api.themoviedb.org/3/find/' + iMDBId + '?api_key=' + secrets.tmdbApiKey + '&external_source=imdb_id').then((output) => {
         const movies = output.data.movie_results;
         if (movies.length < 1) {
             res.status(400).send('No movie found!');
